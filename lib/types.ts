@@ -1,0 +1,28 @@
+import type { QualityReview } from './quality.ts';
+export const countries = { US: { name: '美国', flag: '🇺🇸', language: '美式英语' }, GB: { name: '英国', flag: '🇬🇧', language: '英式英语' }, SG: { name: '东南亚 · 新加坡', flag: '🇸🇬', language: '英语' }, ID: { name: '东南亚 · 印度尼西亚', flag: '🇮🇩', language: '印尼语' }, JP: { name: '日本', flag: '🇯🇵', language: '日语' } } as const;
+export type Country = keyof typeof countries;
+export const languages = { en: 'English', ja: '日本語', id: 'Bahasa Indonesia' } as const;
+export type Language = keyof typeof languages;
+export const objectives = ['Awareness','Consideration','Conversion','Traffic','Product Launch','Retargeting'] as const;
+export type Objective = typeof objectives[number];
+export const tones = { Casual:'自然口语 · Casual', Energetic:'轻快有力 · Energetic', Demonstrative:'清楚演示 · Demonstrative', Premium:'克制精致 · Premium', Minimal:'简洁留白 · Minimal', UGC:'创作者口吻 · UGC' } as const;
+export type Tone = keyof typeof tones;
+export const directionIds = ['pain-point','product-demo','lifestyle'] as const;
+export type DirectionId = typeof directionIds[number];
+export type CreativeDirection = { id:DirectionId; name:string; strategy:string; hookExample:string; logic:string; strength:string; bestFor:string };
+export type User = { id: string; name: string };
+// Optional additions preserve existing browser projects and unfinished drafts.
+export type ProductInput = { name: string; benefits: string; category: string; country: Country; audience: string; platform: string; style: string; usageContext?: string; purchaseConcern?: string; evidenceSources?: string; description?: string; price?: string; productUrl?: string; language?: Language; objective?: Objective; tone?:Tone; offer?: string; desiredCta?: string; painPoints?: string; patternId?: string };
+export type CampaignBrief = ProductInput;
+export type CreativeContent = { direction: string; subtitle: string; concept?: string; buyingReason?: string; firstFrame?: string; props?: string; evidence?: string; coreBenefit: string; hook: string; body: string; headline?: string; cta: string; script: { time: string; visual: string; voiceover: string; title?: string; subtitle?: string; sound?: string }[]; rationale: string };
+export type VersionSource = 'generated'|'edited'|'improved'|'restored';
+export type CreativeVersion = { id: string; number: number; createdAt: string; source: VersionSource; label: string; content: CreativeContent; generation?:GenerationInfo; score?:CreativeScore; changeNotes?:string[] };
+export type ScoreDimension = { key: string; label: string; score: number; reason: string; suggestion: string };
+export type CreativeScore = { total: number; dimensions: ScoreDimension[]; method: 'heuristic-v1'; snapshot: string; scoredAt: string };
+export type Localization = { id: string; sourceMarket: Country; targetMarket: Country; language: Language; tone: string; createdAt: string; sourceVersion: number; original: CreativeContent; content: CreativeContent; notes: string[]; mode: 'mock'|'ai'; changedElements?:string[]; warnings?:string[]; generation?:GenerationInfo };
+export type Creative = CreativeContent & { id: string; directionId?:DirectionId; createdAt?:string; updatedAt?:string; generation?:GenerationInfo; favorite?: boolean; source?: VersionSource; versions?: CreativeVersion[]; score?: CreativeScore; localizations?: Localization[]; savedVersions?:string[] };
+export type GenerationInfo = { mode:'mock'|'ai'; model?:string; provider?:string; generatedAt:string };
+export type UsefulSignal = { id:string; type:'save'|'copy'|'export'|'iterate'|'localize'; creativeId:string; versionId:string; localizationId?:string; at:string };
+export type Project = { id: string; createdAt: string; updatedAt: string; input: ProductInput; creatives: Creative[]; revision: number; selectedDirection?:DirectionId; signals?:UsefulSignal[]; isExample?: boolean; caseId?: string; reviews?: Record<string, QualityReview>; generation?: GenerationInfo; userId?: string; status?: 'draft'|'active'|'archived' };
+export type GenerationRequest = { input: CampaignBrief; revision: number; direction?:DirectionId };
+export type GenerationResult = { creatives: Creative[]; generation: GenerationInfo };

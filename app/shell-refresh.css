@@ -1,0 +1,118 @@
+/* Shared workspace chrome. Tokens are supplied by the global theme. */
+.adora-shell{display:block;min-height:100dvh;background:var(--bg);color:var(--ink)}
+.adora-sidebar{position:fixed;inset:0 auto 0 0;z-index:30;display:flex;flex-direction:column;width:220px;background:#f5f4ef;border-right:1px solid var(--line);padding:30px 18px 20px;overflow-y:auto}
+.adora-sidebar-brand{display:block;padding:0 12px 28px;flex-shrink:0}
+.adora-brand{display:inline-flex;align-items:center;gap:9px;white-space:nowrap}
+.adora-brand-mark{display:flex;width:36px;height:36px;color:#23251f}
+.adora-brand-wordmark{font-family:var(--font-sans);font-size:28px;font-weight:750;line-height:1;letter-spacing:-1.4px}
+.adora-brand-dot{color:#939a67}
+.adora-brand-caption{display:block;margin-top:9px;font-size:10px;color:#737568;letter-spacing:.25px}
+.adora-workspace-label{display:flex;align-items:center;gap:10px;padding:14px 11px;margin-bottom:27px;background:#eae9e1;border:1px solid #e3e2d8;border-radius:9px;flex-shrink:0}
+.adora-workspace-symbol{display:grid;place-items:center;width:29px;height:29px;border-radius:7px;background:#fffdf8;border:1px solid #deddd1;font-size:20px;font-weight:650;line-height:1}
+.adora-workspace-label strong,.adora-workspace-label span:not(.adora-workspace-symbol){display:block}
+.adora-workspace-label strong{font-size:11px;font-weight:600;line-height:1.5}
+.adora-workspace-label div>span{font-size:9px;letter-spacing:.2px;color:#77796b;margin-top:2px}
+.adora-sidebar-nav{display:flex;flex-direction:column;gap:5px;flex-shrink:0}
+.adora-nav-group-label{font-size:9px;letter-spacing:1.5px;color:#828377;padding:0 13px;margin-bottom:7px}
+.adora-nav-group-secondary{margin-top:28px}
+.adora-sidebar-link{display:flex;align-items:center;gap:12px;padding:11px 13px;min-height:44px;border-radius:7px;color:#64675d;font-size:12px;font-weight:500}
+.adora-sidebar-link:hover{background:#eae9e2;color:#262920}
+.adora-sidebar-link.is-active{background:#252720;color:#fafbf6;box-shadow:0 2px 4px #1a21120b}
+.adora-sidebar-link.is-active svg{color:#d0e17d}
+.adora-nav-indicator{width:5px;height:5px;border-radius:50%;background:#d0e17d;margin-left:auto}
+.adora-sidebar-bottom{margin-top:auto;padding-top:30px}
+.adora-local-space{display:flex;align-items:center;gap:9px;padding:15px 8px;border-top:1px solid #dfdfd5;color:#696c5f}
+.adora-local-space strong,.adora-local-space span{display:block}
+.adora-local-space strong{font-size:10px;font-weight:550;color:#4d5246}
+.adora-local-space div>span{font-size:9px;color:#858779;margin-top:3px}
+.adora-local-dot{width:5px;height:5px;border-radius:50%;background:#789454;margin-left:auto}
+.adora-sidebar-bottom>p{padding:5px 8px;font-size:9px;line-height:1.8;color:#8a8c80}
+.adora-shell .adora-main-shell{margin:0 0 0 220px;width:calc(100% - 220px);min-height:100dvh}
+.adora-shell main :where(section[id],div[id],h1[id],h2[id]){scroll-margin-top:96px}
+.adora-topbar{position:sticky;top:0;z-index:15;display:flex;align-items:center;justify-content:space-between;gap:18px;height:72px;padding:0 40px;border-bottom:1px solid var(--line);background:var(--bg)}
+.adora-topbar-location{display:flex;align-items:center;gap:13px;min-width:0;font-size:11px;color:#828479}
+.adora-topbar-location strong{font-size:12px;font-weight:550;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.adora-topbar-divider{color:#b7b9ad;font-size:14px}
+.adora-topbar-actions{display:flex;align-items:center;gap:22px;flex-shrink:0}
+.adora-topbar-local{display:inline-flex;align-items:center;gap:6px;color:#7f8376;font-size:10px;white-space:nowrap}
+.adora-new-project{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;min-height:36px;border-radius:7px;background:#282a22;color:#fffdf5;font-size:11px;font-weight:500}
+.adora-new-project:hover{background:#424638}
+.adora-new-project-arrow{margin-left:6px;color:#bac69a}
+.adora-mobile-brand{display:none}
+.adora-shell .adora-footer{padding:25px 40px 28px;border-top:0;color:#8a8c7f;font-size:9px;letter-spacing:.1px;max-width:1320px}
+.adora-shell .adora-mobile-nav{display:none}
+
+.adora-page-heading{align-items:flex-end;gap:22px;margin-bottom:30px}
+.adora-page-heading h1{font-size:32px;font-weight:650;letter-spacing:-1.1px;line-height:1.3}
+.adora-page-heading .eyebrow{font-size:9px;letter-spacing:1.7px;margin-bottom:12px;color:#8b8e7c}
+.adora-page-heading .page-description{font-size:12px;line-height:1.9;max-width:690px;margin-top:11px}
+.adora-page-heading-action{display:flex;align-items:center;flex-shrink:0}
+.adora-shell .adora-project-card{display:flex;flex-direction:column;align-items:stretch;gap:0;padding:23px;background:#fffefa;border:1px solid var(--line);border-radius:12px;min-width:0;transition:border-color .2s,box-shadow .2s,transform .2s}
+.adora-shell .adora-project-card:hover{background:#fffefa;border-color:#b8c494;box-shadow:0 8px 24px #42483508;transform:translateY(-2px)}
+.adora-project-card-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:21px}
+.adora-project-symbol{display:grid;place-items:center;width:40px;height:40px;border-radius:10px;background:#e9edcf;color:#5a6540}
+.adora-project-card[data-market=GB] .adora-project-symbol{background:#f2e5ce;color:#8f6b30}
+.adora-project-card[data-market=JP] .adora-project-symbol{background:#eee1df;color:#926658}
+.adora-project-card[data-market=ID] .adora-project-symbol{background:#e4eade;color:#62724c}
+.adora-project-card[data-market=SG] .adora-project-symbol{background:#e0e9e8;color:#4c7871}
+.adora-project-updated{font-size:9px;color:#929488;white-space:nowrap}
+.adora-project-summary{flex:1;min-width:0}
+.adora-shell .adora-project-summary h3{font-size:16px;line-height:1.55;font-weight:600;letter-spacing:-.2px;overflow-wrap:anywhere}
+.adora-project-meta{display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin-top:11px;font-size:10px;color:#6d7364}
+.adora-project-meta>span{padding:3px 8px;border:1px solid #e8e9e1;background:#fafaf5;border-radius:5px;overflow-wrap:anywhere}
+.adora-project-progress{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:5px;margin-top:25px;padding-top:0}
+.adora-project-progress>span{display:flex;flex-direction:column;gap:6px;font-size:8px;color:#939688;line-height:1.5}
+.adora-project-progress i{display:block;height:3px;background:#eaece2;border-radius:3px}
+.adora-project-progress .is-complete{color:#667743}
+.adora-project-progress .is-complete i{background:#c3d28a}
+.adora-project-card-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:20px;padding-top:18px;border-top:1px solid #eeeee6}
+.adora-project-next>span{display:block;font-size:11px;font-weight:550;color:#41473a}
+.adora-project-next>small{display:block;font-size:9px;color:#939787;margin-top:4px}
+.adora-project-open{display:grid;place-items:center;width:30px;height:30px;background:#f3f4eb;border:1px solid #e7e9dc;border-radius:50%;color:#5c6945}
+.adora-project-card:hover .adora-project-open{background:#e9efcb;border-color:#d3dda8}
+.adora-shell .project-grid:has(>.adora-project-card){grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.adora-shell .library-project:has(.adora-project-card){padding-bottom:0;margin-bottom:16px;background:#fffefa;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.adora-shell .library-project .adora-project-card{border:0;border-radius:0;box-shadow:none;transform:none}
+.adora-shell .library-project:has(.adora-project-card) .library-project-actions{padding:13px 20px;border-top:1px solid #eceee3;gap:14px;justify-content:flex-start;flex-wrap:wrap;background:#fafbf5}
+.adora-shell .library-project:has(.adora-project-card) .library-project-actions .pill{margin-right:auto}
+.adora-shell .adora-empty-state{border:1px dashed #d7dbc8;border-radius:12px;background:#fafbf5;gap:14px;padding:62px 24px}
+.adora-empty-state .adora-empty-icon{display:grid;place-items:center;width:64px;height:64px;border:1px solid #dfe5c9;border-radius:18px;background:#eef2dd;color:#7a8854;margin-bottom:3px}
+.adora-empty-state h3{font-size:18px;font-weight:600}
+.adora-empty-state p{font-size:12px;line-height:1.9}
+.adora-empty-state .button{margin-top:7px}
+.adora-loading-state{min-height:120px}
+
+@media(max-width:1200px){.adora-topbar{padding-inline:30px}.adora-shell .project-grid:has(>.adora-project-card){grid-template-columns:repeat(2,minmax(0,1fr))}.adora-shell .adora-footer{padding-inline:30px}}
+@media(max-width:960px){
+  .adora-sidebar{display:none}
+  .adora-shell .adora-main-shell{margin:0;width:100%}
+  .adora-topbar{height:67px;padding:0 24px}
+  .adora-mobile-brand{display:inline-flex;align-items:center;min-height:44px}
+  .adora-mobile-brand .adora-brand-wordmark{font-size:25px}
+  .adora-mobile-brand .adora-brand-mark{width:31px;height:31px}
+  .adora-mobile-brand .adora-brand-mark svg{width:31px;height:31px}
+  .adora-topbar-location{display:none}
+  .adora-topbar-local{display:none}
+  .adora-new-project{min-height:44px}
+  .adora-shell .adora-mobile-nav{position:fixed;z-index:30;bottom:0;left:0;right:0;display:flex;justify-content:space-around;border-top:1px solid #e1e5d6;background:#fafbf6;padding:10px 6px calc(10px + env(safe-area-inset-bottom,0px));box-shadow:0 -4px 18px #424b3505}
+  .adora-shell .adora-mobile-nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-width:56px;min-height:44px;font-size:9px;color:#848877}
+  .adora-shell .adora-mobile-nav a.active{color:#323a25}
+  .adora-shell .adora-mobile-nav a.active svg{color:#53662e}
+  .adora-shell .adora-footer{padding:22px 24px calc(110px + env(safe-area-inset-bottom,0px));font-size:9px;flex-wrap:wrap;gap:8px}
+}
+@media(max-width:600px){
+  .adora-page-heading{align-items:flex-start;flex-direction:column;gap:17px;margin-bottom:25px}
+  .adora-page-heading h1{font-size:27px;letter-spacing:-.7px}
+  .adora-page-heading .page-description{font-size:12px}
+  .adora-shell .project-grid:has(>.adora-project-card){grid-template-columns:1fr;gap:13px}
+  .adora-topbar{padding-inline:19px;height:63px}
+  .adora-new-project{gap:6px;font-size:10px;padding:9px 11px}
+  .adora-new-project-arrow{display:none}
+  .adora-shell .adora-project-card{padding:20px}
+  .adora-project-card-top{margin-bottom:17px}
+  .adora-shell .adora-project-summary h3{font-size:16px}
+  .adora-project-progress>span{font-size:9px}
+  .adora-shell .library-project:has(.adora-project-card) .library-project-actions{padding:12px 18px;gap:13px}
+  .adora-shell .adora-footer{padding-inline:19px}
+}
+@media(prefers-reduced-motion:reduce){.adora-shell .adora-project-card:hover{transform:none}}
